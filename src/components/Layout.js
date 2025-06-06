@@ -7,29 +7,82 @@ import Traductor from '../pages/Traductor';
 import TablaMultiplicar from '../pages/TablaMultiplicar';
 import Experiencia from '../pages/Experiencia';
 import { Box, CssBaseline, IconButton, useMediaQuery } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import MusicVideoIcon from '@mui/icons-material/MusicVideo';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const androidTheme = createTheme({
+const eyeFriendlyTheme = createTheme({
+  shape: {
+    borderRadius: 16 // Mantenemos el radio de borde para todas las formas
+  },
   palette: {
-    primary: { main: '#4a7bd0' }, 
-    secondary: { main: '#ffffff' },
+    primary: { main: '#4d6a9a' }, // Azul medio suave
+    secondary: { main: '#6d9886' }, // Verde suave
     background: { 
-      default: '#F3EDF7', 
-      paper: '#FFFFFF' 
+      default: '#f5f7fa', // Gris muy claro azulado
+      paper: '#ffffff' // Blanco para contraste
     },
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     button: {
       textTransform: 'none' 
+    },
+    h5: {
+      fontWeight: 600
+    },
+    subtitle1: {
+      fontWeight: 500
     }
   },
   components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16
+        }
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16,
+          overflow: 'hidden'
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          boxShadow: '0px 4px 8px rgba(77, 106, 154, 0.15)',
+          '&:hover': {
+            boxShadow: '0px 6px 12px rgba(77, 106, 154, 0.25)',
+          }
+        }
+      }
+    },
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          backgroundColor: '#F3EDF7'
+          backgroundColor: '#f5f7fa', // Gris muy claro azulado
+          borderTopRightRadius: 24,
+          borderBottomRightRadius: 24
+        }
+      }
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 12
+          }
+        }
+      }
+    },
+    MuiAvatar: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0 4px 12px rgba(77, 106, 154, 0.2)'
         }
       }
     }
@@ -45,14 +98,12 @@ function Layout() {
   };
 
   return (
-    <ThemeProvider theme={androidTheme}>
+    <ThemeProvider theme={eyeFriendlyTheme}>
       <Box sx={{ display: 'flex', minHeight: '100vh' }}>
         <CssBaseline />
         
-     
         <Menu mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
         
-       
         {isMobile && (
           <IconButton
             color="inherit"
@@ -65,23 +116,26 @@ function Layout() {
               left: 16,
               zIndex: 1300,
               color: 'primary.main',
-              backgroundColor: 'background.paper',
-              boxShadow: 2,
+              backgroundColor: 'white',
+              boxShadow: '0 4px 12px rgba(77, 106, 154, 0.2)',
+              borderRadius: '50%',
+              width: 48,
+              height: 48,
               '&:hover': {
-                backgroundColor: 'background.paper'
+                backgroundColor: 'white',
+                boxShadow: '0 6px 16px rgba(77, 106, 154, 0.3)',
               }
             }}
           >
-            <MenuIcon />
+            <MusicVideoIcon />
           </IconButton>
         )}
         
-        {/* Contenido principal */}
         <Box
           component="main"
           sx={{
             flexGrow: 1,
-            p: isMobile ? 1 : 2,
+            p: isMobile ? 2 : 3,
             width: '100%',
             marginLeft: isMobile ? 0 : '240px',
             transition: 'margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms',

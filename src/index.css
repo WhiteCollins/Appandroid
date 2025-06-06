@@ -55,11 +55,11 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(145deg, #637abb 0%, #e6f0fb 100%);
-  /* Alternativas modernas: */
-  /* background: #f5f7fa; /* Gris azulado muy claro */
-  /* background: #faf8f8; /* Blanco hueso moderno */
-  /* background: #f8f9fa; /* Gris muy claro moderno */
+  background: linear-gradient(145deg, #ffb300 0%, #fff8e1 100%); /* Tonos ámbar */
+  font-family: var(--font-family);
+  color: var(--on-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {

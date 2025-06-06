@@ -28,7 +28,7 @@ function Experiencia() {
           width="100%"
           height="100%"
           style={{ position: 'absolute', top: 0, left: 0 }}
-          src="https://www.youtube.com/embed/vjnu5JfHVWQ"
+          src="https://youtu.be/Zi_XLOBDo_Y?si=1pQb2Rrbz1bLdbt1"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
